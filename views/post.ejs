@@ -1,0 +1,42 @@
+
+<%- include("partials/header"); -%>
+
+
+    <h1 class="post-title"><%=title%></h1>
+    <p class="post-content"><%=content%></p>
+    <form action="/delete" method="post">
+      <button class="btn btn-lg float-right" type="submit" name="deleteButton" value="<%=id%>" id="del-btn">
+        DELETE
+        <i class="fa-solid fa-xl fa-trash" id="del"></i>
+      </button>
+  </form>
+    <button onclick="topFunction()" id="scrollUp" title="Go to top">
+      <i class="fa-solid fa-xl fa-arrow-up"></i>
+    </button>
+
+
+
+
+
+    <script>
+     scrollup = document.getElementById("scrollUp");
+    
+    
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+       scrollup.style.display = "block";
+      } else {
+       scrollup.style.display = "none";
+      }
+    }
+    
+    function topFunction() {
+    
+      document.documentElement.scrollTop = 0; 
+    }
+    
+    </script>
+
+
+<%- include("partials/footer"); -%>

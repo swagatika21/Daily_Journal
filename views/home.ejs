@@ -1,0 +1,35 @@
+
+<%- include("partials/header"); -%>
+<div class="row">
+  <div class="col-8">
+      
+     <div>
+      <h1 class="typing-home" >
+            "A journal is your completely unaltered voice."
+          
+      </h1>
+      <br>
+      <a type="button" href="compose" class="btn btn-lg " id="button-start">
+          GET STARTED
+      <i class="fa-solid fa-2xl fa-pen-to-square" id="feather"></i>
+          
+      </a>
+       </div> 
+  </div>
+  <br>
+  <%  posts.forEach(function(post){ %>
+    <div class="home-post">
+      <h1 class="post-title-home"><%=post.title%></h1>
+      <p>
+        <span class="post-content-home">
+          <%=post.content.substring(0, 200) + " ..."%>
+          </p>
+        </span>
+        <a href="/posts/<%=post._id%>" class="btn btn-lg" id="button-start-3">Read More
+          <i class="fa-solid fa-2xl fa-book-open" id="book"></i>
+        </a>
+    </div>
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
